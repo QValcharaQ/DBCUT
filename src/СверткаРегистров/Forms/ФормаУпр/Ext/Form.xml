@@ -1,7 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.19">
 	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
-	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="СохранитьНастройки" id="196">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СохранитьНастройки</CommandName>
+				<ExtendedTooltip name="СохранитьНастройкиРасширеннаяПодсказка" id="197"/>
+			</Button>
+			<Button name="ФормаЗагрузитьНастройки" id="198">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗагрузитьНастройки</CommandName>
+				<ExtendedTooltip name="ФормаЗагрузитьНастройкиРасширеннаяПодсказка" id="199"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
 	<Events>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
@@ -248,11 +261,6 @@
 							<AutoCommandBar name="РегистрыНакопленияОстаткиСписокКоманднаяПанель" id="55">
 								<Autofill>false</Autofill>
 								<ChildItems>
-									<Button name="РегистрыНакопленияОстаткиСписокСоздатьДокументыРНОСтатки" id="141">
-										<Type>CommandBarButton</Type>
-										<CommandName>Form.Command.СоздатьДокументыРНОСтатки</CommandName>
-										<ExtendedTooltip name="РегистрыНакопленияОстаткиСписокСоздатьДокументыРНОСтаткиРасширеннаяПодсказка" id="142"/>
-									</Button>
 									<Button name="РегистрыНакопленияОстаткиСписокУстановитьПометки" id="143">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.УстановитьПометки</CommandName>
@@ -270,6 +278,16 @@
 											<xr:LoadTransparent>true</xr:LoadTransparent>
 										</Picture>
 										<ExtendedTooltip name="РегистрыНакопленияОстаткиСписокСнятьПометкиРасширеннаяПодсказка" id="146"/>
+									</Button>
+									<Button name="РегистрыНакопленияОстаткиСписокСоздатьДокументыРНОСтатки" id="141">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.СоздатьДокументыРНОСтатки</CommandName>
+										<ExtendedTooltip name="РегистрыНакопленияОстаткиСписокСоздатьДокументыРНОСтаткиРасширеннаяПодсказка" id="142"/>
+									</Button>
+									<Button name="РегистрыНакопленияОстаткиСписокПересчитатьИтогиРН" id="200">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ПересчитатьИтогиРН</CommandName>
+										<ExtendedTooltip name="РегистрыНакопленияОстаткиСписокПересчитатьИтогиРНРасширеннаяПодсказка" id="201"/>
 									</Button>
 								</ChildItems>
 							</AutoCommandBar>
@@ -769,6 +787,51 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ОчиститьТЧДокументов</Action>
+		</Command>
+		<Command name="СохранитьНастройки" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьНастройки</Action>
+		</Command>
+		<Command name="ЗагрузитьНастройки" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьНастройки</Action>
+		</Command>
+		<Command name="ПересчитатьИтогиРН" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пересчитать итоги РН</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пересчитать итоги РН</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПересчитатьИтогиРН</Action>
 		</Command>
 	</Commands>
 </Form>
